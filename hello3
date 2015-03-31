@@ -1,0 +1,35 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" session = "true"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<%
+String username = request.getParameter("username");
+String password = request.getParameter("password");
+session.putValue("username", username);
+session.putValue("password", password);
+
+System.out.println(username+":" +password);
+
+%>
+
+
+<body>
+<br><br><br>
+Session ID: <%=session.getId()%> (You are not supposed to see this info.)
+<br><br><br>
+<form method = Get action = "hello3.jsp">
+
+SSN: <input type ="text" name = "SSN"> <br><br>
+
+<input type = "submit" value = "Submit">
+</form>
+
+
+
+</body>
+</html>
